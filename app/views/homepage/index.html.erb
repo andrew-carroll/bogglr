@@ -1,5 +1,13 @@
 <h1>bogglr</h1>
 <div class="feed">
+<% if user_signed_in? %>
+    Signed in as <%= current_user.email %>.
+    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+<% else %>
+    <%= link_to "Sign in", new_user_session_path %>
+    <%= link_to "Sign up", new_user_registration_path %>
+<% end %>
+
 <% @photos.each do |photo| %>
     <div class="photo photo_id_<%=photo.id%>">
         <img src="<%=photo.image.filename%>">
