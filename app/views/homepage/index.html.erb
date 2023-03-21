@@ -1,1 +1,18 @@
 <h1>bogglr</h1>
+<div class="feed">
+<% @photos.each do |photo| %>
+    <div class="photo photo_id_<%=photo.id%>">
+        <img src="<%=photo.image.filename%>">
+        <%
+            name = case photo.rats.size
+            when 1
+                photo.rats.first.name
+            when 2
+                photo.rats.map(&:name).join(' and ')
+            else
+                photo.rats[0..-1].map(&:name).join(', ') + ' and ' + photo.rats[-1].name
+            end
+        %>
+        <span class='rat_name'><%= name %></span>
+    </div>
+<% end %>

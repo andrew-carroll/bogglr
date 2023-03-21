@@ -72,6 +72,7 @@ group :test do
   gem "webdrivers"
   gem "timecop", "~> 0.9.6"
   gem "shoulda"
+  gem 'database_cleaner-active_record'
 end
 
 gem "devise", "~> 4.9"
