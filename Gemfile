@@ -69,4 +69,6 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem "timecop", "~> 0.9.6"
 end
+
