@@ -1,0 +1,7 @@
+<h1>My profile</h1>
+<div class="rats">
+    <%= link_to 'Add a rat', new_rat_path %>
+    <% @rats.each do |rat|%>
+    <%= link_to rat.name, rat_path(rat) %>
+    <% end %>
+</div>
