@@ -71,5 +71,7 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
   gem "timecop", "~> 0.9.6"
+  gem "shoulda"
 end
 
+gem "devise", "~> 4.9"
