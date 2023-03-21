@@ -89,6 +89,22 @@ describe 'Homepage', type: :feature do
   it 'should have a logo' do
     expect(page).to have_content("bogglr")
   end
+  context 'when not logged in' do
+    it 'should have links to sign up or sign in' do
+      expect(page).to have_link('Sign up')
+      expect(page).to have_link('Sign in')
+    end
+  end
+  context 'when logged in' do
+    before do
+      login_as @user
+      visit root_path
+    end
+    it 'should have a link to log out and user profile' do
+      expect(page).to have_link('My profile', href: user_profile_path)
+      expect(page).to have_link('Sign out')
+    end
+  end
   describe 'feed' do
     it 'should display rat photos with names, birthdays, caretaker names, and crossed_rainbow_bridge status' do
       within(".feed .photo.photo_id_#{@rats[:george].photos.first.image.id}") do
