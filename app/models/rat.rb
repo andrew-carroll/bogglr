@@ -7,4 +7,16 @@ class Rat < ApplicationRecord
   def caretaker
     caretakers.first
   end
+
+  def age
+    if crossed_rainbow_bridge?
+      ((crossed_rainbow_bridge_at - approx_birthday) / 1.month).to_i
+    else
+      ((Time.now - approx_birthday) / 1.month).to_i
+    end
+  end
+
+  def crossed_rainbow_bridge?
+    crossed_rainbow_bridge_at != nil
+  end
 end
