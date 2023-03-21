@@ -73,15 +73,15 @@ describe 'Homepage', type: :feature do
      }
 
      [:ellie, :honey, :gemma].each do |rat|
-       photo = @rats[rat].photos.create!
+       photo = @rats[rat].photos.create!(user: @rats[rat].caretakers.first)
        photo.image.attach(photo_files[rat])
      end
 
-     photo = @rats[:linkin].photos.create!
+     photo = @rats[:linkin].photos.create!(user: @rats[:linkin].caretakers.first)
      RatPhoto.create!(rat: @rats[:blanche], photo: photo)
      photo.image.attach(photo_files[:linkin_and_blanche])
 
-     photo = @rats[:fred].photos.create!
+     photo = @rats[:fred].photos.create!(user: @rats[:fred].caretakers.first)
      RatPhoto.create!(rat: @rats[:george], photo: photo)
      photo.image.attach(photo_files[:fred_and_george])
 
