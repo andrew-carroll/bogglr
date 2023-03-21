@@ -24,11 +24,11 @@ describe 'Homepage', type: :feature do
         confirmed_at: Time.now
       )
       photo_files = {
-        ellie: fixture_file_upload(Rails.root.join('app', 'assets', 'images', 'ellie.jpg'), 'image/jpg'),
-        honey: fixture_file_upload(Rails.root.join('app', 'assets', 'images', 'honey.jpg'), 'image/jpg'),
-        fred_and_george: fixture_file_upload(Rails.root.join('app', 'assets', 'images', 'fred_and_george.jpg'), 'image/jpg'),
-        gemma: fixture_file_upload(Rails.root.join('app', 'assets', 'images', 'gemma.jpg'), 'image/jpg'),
-        linkin_and_blanche: fixture_file_upload(Rails.root.join('app', 'assets', 'images', 'linkin_and_blanche.jpg'), 'image/jpg')
+        ellie: fixture_file_upload(Rails.root.join('app', 'assets', 'images', 'ellie.jpg')),
+        honey: fixture_file_upload(Rails.root.join('app', 'assets', 'images', 'honey.jpg')),
+        fred_and_george: fixture_file_upload(Rails.root.join('app', 'assets', 'images', 'fred_and_george.jpg')),
+        gemma: fixture_file_upload(Rails.root.join('app', 'assets', 'images', 'gemma.jpg')),
+        linkin_and_blanche: fixture_file_upload(Rails.root.join('app', 'assets', 'images', 'linkin_and_blanche.jpg'))
       }
       @rats = {
         ellie: @user.rats.create!(
