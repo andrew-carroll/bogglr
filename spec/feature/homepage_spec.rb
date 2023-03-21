@@ -1,6 +1,9 @@
 require 'rails_helper'
 
 describe 'Homepage', type: :feature do
+  before do
+    visit root_path
+  end
   it 'should have a logo' do
     expect(page).to have_content("bogglr")
   end
@@ -83,7 +86,6 @@ describe 'Homepage', type: :feature do
      photo.image.attach(photo_files[:fred_and_george])
 
      Timecop.freeze(Time.local(2023,3,21,9,30,00))
-     visit '/'
     end
 
     after do
