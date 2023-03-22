@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Rats", type: :request do
+  fixtures :users
   describe "GET /index" do
     it "returns http not found" do
       get "/rats"
@@ -10,8 +11,7 @@ RSpec.describe "Rats", type: :request do
   describe "GET /new" do
     context 'logged in' do
       before do
-        @user = User.create!(username: 'acarroll', email: 'acarroll@bogglr.com', password: 'hunter2', password_confirmation: 'hunter2')
-        login_as @user
+        login_as users(:acarroll)
       end
       it "returns http success" do
         get "/rats/new"

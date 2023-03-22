@@ -1,20 +1,9 @@
 require 'rails_helper'
 
 RSpec.feature "UserProfiles", type: :feature do
+  fixtures :rats, :users
   before do
-    @user = User.create!(username: 'acarroll', email: 'acarroll@bogglr.com', password: 'hunter2', password_confirmation: 'hunter2')
-    @rat = @user.rats.create!(
-      name: "Fred",
-      sex: :male,
-      approx_birthday: Date.new(2018,2,1),
-      crossed_rainbow_bridge_at: Date.new(2020, 10, 29)
-    )
-    @rat2 = @user.rats.create!(
-      name: "Gemma",
-      sex: :female,
-      approx_birthday: Date.new(2022, 3, 1)
-    )
-    login_as @user
+    login_as users(:acarroll)
     visit user_profile_path
   end
   it 'has a link to new rat creation page' do
@@ -22,8 +11,10 @@ RSpec.feature "UserProfiles", type: :feature do
   end
   it 'lists all rats for whom the user is a caretaker' do
     within '.rats' do
-      expect(page).to have_link('Fred', href: "/rats/#{@rat.id}")
-      expect(page).to have_link('Gemma', href: "/rats/#{@rat2.id}")
+      expect(page).to have_link('Fred', href: "/rats/#{rats(:fred).id}")
+      expect(page).to have_link('George', href: "/rats/#{rats(:george).id}")
+      expect(page).to have_link('Honey', href: "/rats/#{rats(:honey).id}")
+      expect(page).to have_link("Ellie", href: "/rats/#{rats(:ellie).id}")
     end
   end
 end

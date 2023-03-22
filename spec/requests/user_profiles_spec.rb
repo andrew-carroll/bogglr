@@ -4,8 +4,7 @@ RSpec.describe "UserProfiles", type: :request do
   describe "GET /index" do
     context 'logged in' do
       before do
-        @user = User.create!(username: 'acarroll', email: 'acarroll@bogglr.com', password: 'hunter2', password_confirmation: 'hunter2')
-        login_as @user
+        login_as users(:acarroll)
       end
       it "returns http success" do
         get "/user_profiles/index"
