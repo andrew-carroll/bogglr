@@ -1,45 +1,38 @@
 blanche:
-  id: 7
   name: Blanche
   sex: female
   approx_birthday: <%= Date.new(2022, 3, 1).to_s %>
 
 ellie:
-  id: 3
   name: Ellie
   sex: female
   approx_birthday: <%= Date.new(2018, 11, 1).to_s %>
   crossed_rainbow_bridge_at: <%= Date.new(2019, 12, 27).to_s %>
 
 fred:
-  id: 1
   name: Fred
   sex: male
   approx_birthday: <%= Date.new(2018, 2, 1).to_s %>
   crossed_rainbow_bridge_at: <%= Date.new(2020, 10, 29).to_s %>
 
 gemma:
-  id: 6
   name: Gemma
   sex: female
   approx_birthday: <%= Date.new(2022, 3, 1).to_s %>
 
 george:
-  id: 2
   name: George
   sex: male
   approx_birthday: <%= Date.new(2018, 2, 1).to_s %>
   crossed_rainbow_bridge_at: <%= Date.new(2019, 12, 19).to_s %>
 
 honey:
-  id: 4
   name: Honey
   sex: female
   approx_birthday: <%= Date.new(2018, 11, 1).to_s %>
   crossed_rainbow_bridge_at: <%= Date.new(2020, 12, 31).to_s %>
 
 linkin:
-  id: 5
   name: Linkin
   sex: male
   approx_birthday: <%= Date.new(2021, 5, 1).to_s %>

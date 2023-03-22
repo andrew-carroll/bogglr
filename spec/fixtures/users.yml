@@ -1,12 +1,10 @@
 ellie_fred_george_honey_caretaker:
-  id: 1
   username: acarroll
   email: acarroll@bogglr.com
   encrypted_password: 12345
   confirmed_at: <%= Time.now %>
 
 blanche_gemma_linkin_caretaker:
-  id: 2
   username: another_user
   email: another_user@bogglr.com
   encrypted_password: 67890
