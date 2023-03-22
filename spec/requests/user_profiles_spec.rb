@@ -14,7 +14,7 @@ RSpec.describe "UserProfiles", type: :request do
     context "not logged in" do
       it "redirects to sign in page" do
         get "/user_profiles/index"
-        expect(response).to have_http_status(302)
+        expect(response).to redirect_to(new_user_session_path)
       end
     end
   end
