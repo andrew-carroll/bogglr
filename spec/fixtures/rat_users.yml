@@ -1,0 +1,27 @@
+blanche:
+  rat: blanche
+  user: blanche_gemma_linkin_caretaker
+
+ellie:
+  rat: ellie
+  user: ellie_fred_george_honey_caretaker
+
+fred:
+  rat: fred
+  user: ellie_fred_george_honey_caretaker
+
+gemma:
+  rat: gemma
+  user: blanche_gemma_linkin_caretaker
+
+george:
+  rat: george
+  user: ellie_fred_george_honey_caretaker
+
+honey:
+  rat: honey
+  user: ellie_fred_george_honey_caretaker
+
+linkin:
+  rat: linkin
+  user: blanche_gemma_linkin_caretaker

@@ -1,0 +1,15 @@
+ellie_fred_george_honey_caretaker:
+  id: 1
+  username: acarroll
+  email: acarroll@bogglr.com
+  password: hunter2
+  password_confirmation: hunter2
+  confirmed_at: <%= Time.now %>
+
+blanche_gemma_linkin_caretaker:
+  id: 2
+  username: another_user
+  email: another_user@bogglr.com
+  password: hunter3
+  password_confirmation: hunter3
+  confirmed_at: <%= Time.now %>
