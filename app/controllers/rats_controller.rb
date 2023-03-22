@@ -1,4 +1,4 @@
-class RatController < ApplicationController
+class RatsController < ApplicationController
   def edit
     @rat = Rat.find(params[:id])
     if @rat == nil

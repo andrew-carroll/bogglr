@@ -18,12 +18,12 @@ RSpec.feature "UserProfiles", type: :feature do
     visit user_profile_path
   end
   it 'has a link to new rat creation page' do
-    expect(page).to have_link('Add a rat', href: '/rat/new')
+    expect(page).to have_link('Add a rat', href: '/rats/new')
   end
   it 'lists all rats for whom the user is a caretaker' do
     within '.rats' do
-      expect(page).to have_link('Fred', href: "/rat.#{@rat.id}")
-      expect(page).to have_link('Gemma', href: "/rat.#{@rat2.id}")
+      expect(page).to have_link('Fred', href: "/rats/#{@rat.id}")
+      expect(page).to have_link('Gemma', href: "/rats/#{@rat2.id}")
     end
   end
 end
