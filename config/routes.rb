@@ -19,5 +19,5 @@ Rails.application.routes.draw do
   root "homepage#index"
 
   get '/profile', to: 'user_profiles#index', as: 'user_profile'
-  resources :rats, only: [:index, :create, :update, :edit, :new, :show]
+  resources :rats, only: [:create, :update, :edit, :new, :show]
 end

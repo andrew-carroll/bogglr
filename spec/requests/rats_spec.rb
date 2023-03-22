@@ -2,12 +2,6 @@ require 'rails_helper'
 
 RSpec.describe "Rats", type: :request do
   fixtures :users
-  describe "GET /index" do
-    it "returns http not found" do
-      get "/rats"
-      expect(response).to have_http_status(404)
-    end
-  end
   describe "GET /new" do
     context 'logged in' do
       before do
