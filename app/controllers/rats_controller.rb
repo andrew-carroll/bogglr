@@ -1,4 +1,5 @@
 class RatsController < ApplicationController
+  before_action :authenticate_user!, except: [:show]
   def edit
     @rat = Rat.find(params[:id])
     if @rat == nil

@@ -43,7 +43,7 @@ describe 'Homepage', type: :feature do
   end
   context 'when logged in' do
     before do
-      login_as @user
+      login_as users(:ellie_fred_george_honey_caretaker)
       visit root_path
     end
     it 'should have a link to log out and user profile' do
@@ -53,24 +53,24 @@ describe 'Homepage', type: :feature do
   end
   describe 'feed' do
     it 'should display rat photos with names, birthdays, caretaker names, and crossed_rainbow_bridge status' do
-      within(".feed .photo.photo_id_#{@rats[:george].photos.first.image.id}") do
-        expect(page).to have_css('img[src*="' + @rats[:george].photos.first.image.filename.to_s + '"]')
+      within(".feed .photo.photo_id_#{rats(:george).photos.first.image.id}") do
+        expect(page).to have_css('img[src*="' + rats(:george).photos.first.image.filename.to_s + '"]')
         expect(page).to have_text(/^Fred and George, 32mo and 22mo 🌈 Caretaker: acarroll$/)
       end
-      within(".feed .photo.photo_id_#{@rats[:ellie].photos.first.image.id}") do
-        expect(page).to have_css('img[src*="' + @rats[:ellie].photos.first.image.filename.to_s + '"]')
+      within(".feed .photo.photo_id_#{rats(:ellie).photos.first.image.id}") do
+        expect(page).to have_css('img[src*="' + rats(:ellie).photos.first.image.filename.to_s + '"]')
         expect(page).to have_text(/^Ellie, 13mo 🌈 Caretaker: acarroll$/)
       end
-      within(".feed .photo.photo_id_#{@rats[:honey].photos.first.image.id}") do
-        expect(page).to have_css('img[src*="' + @rats[:honey].photos.first.image.filename.to_s + '"]')
+      within(".feed .photo.photo_id_#{rats(:honey).photos.first.image.id}") do
+        expect(page).to have_css('img[src*="' + rats(:honey).photos.first.image.filename.to_s + '"]')
         expect(page).to have_text(/^Honey, 25mo 🌈 Caretaker: acarroll$/)
       end
-      within(".feed .photo.photo_id_#{@rats[:gemma].photos.first.image.id}") do
-        expect(page).to have_css('img[src*="' + @rats[:gemma].photos.first.image.filename.to_s + '"]')
+      within(".feed .photo.photo_id_#{rats(:gemma).photos.first.image.id}") do
+        expect(page).to have_css('img[src*="' + rats(:gemma).photos.first.image.filename.to_s + '"]')
         expect(page).to have_text(/^Gemma, 12mo Caretaker: another_user$/)
       end
-      within(".feed .photo.photo_id_#{@rats[:blanche].photos.first.image.id}") do
-        expect(page).to have_css('img[src*="' + @rats[:linkin].photos.first.image.filename.to_s + '"]')
+      within(".feed .photo.photo_id_#{rats(:blanche).photos.first.image.id}") do
+        expect(page).to have_css('img[src*="' + rats(:linkin).photos.first.image.filename.to_s + '"]')
         expect(page).to have_text(/^Linkin and Blanche, 22mo and 12mo Caretaker: another_user$/)
       end
     end

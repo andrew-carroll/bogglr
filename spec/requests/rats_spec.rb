@@ -5,7 +5,7 @@ RSpec.describe "Rats", type: :request do
   describe "GET /new" do
     context 'logged in' do
       before do
-        login_as users(:acarroll)
+        login_as users(:ellie_fred_george_honey_caretaker)
       end
       it "returns http success" do
         get "/rats/new"

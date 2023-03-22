@@ -1,10 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe "UserProfiles", type: :request do
+  fixtures :users
   describe "GET /index" do
     context 'logged in' do
       before do
-        login_as users(:acarroll)
+        login_as users(:ellie_fred_george_honey_caretaker)
       end
       it "returns http success" do
         get "/user_profiles/index"

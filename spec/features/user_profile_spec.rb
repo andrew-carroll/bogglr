@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature "UserProfiles", type: :feature do
   fixtures :rats, :users
   before do
-    login_as users(:acarroll)
+    login_as users(:ellie_fred_george_honey_caretaker)
     visit user_profile_path
   end
   it 'has a link to new rat creation page' do
