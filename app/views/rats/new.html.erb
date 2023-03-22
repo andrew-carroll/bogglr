@@ -1,2 +1,15 @@
-<h1>Rat#new</h1>
-<p>Find me in app/views/rat/new.html.erb</p>
+<h1>Create a new rat</h1>
+<%= form_with model: Rat.new do |rat_form| %>
+    <%= rat_form.text_field :name %>
+    <%= rat_form.select :sex,
+    [
+        ["Unspecified", "unspecified"],
+        ["Female", "female"],
+        ["Male", "male"],
+        ["Intersex", "intersex"]
+    ],
+    selected: "Unspecified" %>
+    <%= rat_form.date_select :approx_birthday %>
+    <%= rat_form.date_select :crossed_rainbow_bridge_at %>
+    <%= rat_form.submit "Save" %>
+<% end %>

@@ -1,2 +1,7 @@
-<h1>Rat#show</h1>
-<p>Find me in app/views/rat/show.html.erb</p>
+<h1><%= @rat.name %></h1>
+<span class='rat_name'><%= @rat.name %>, </span>
+<span class='rat_age'><%= @rat.age %></span>
+<% if @rat.crossed_rainbow_bridge? %>
+    <span class='crossed_rainbow_bridge'>🌈</span>
+<% end %>
+<span class='caretaker'>Caretaker: <%= @rat.caretaker %></span>
